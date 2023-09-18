@@ -13,7 +13,7 @@ app.engine('jsx', jsxEngine());
 
 //Routes
 app.get('/', (req, res) => {
-    res.send('Welcome to the Pokemon App!')
+    res.render('Home')
 })
 
 app.get('/pokemon', (req, res) => {
@@ -21,7 +21,7 @@ app.get('/pokemon', (req, res) => {
 })
 
 app.get('/pokemon/:id', (req, res) => {
-    res.send(req.params.id)
+    res.render('Show', {pokemon: pokemon[req.params.id]})
 })
 
 
