@@ -9,10 +9,12 @@ class Index extends React.Component {
             <div>
                 <h1>See All The Pokemon!</h1>
                 <ul>
-                    {pokemons.map((pokemon) => {
+                    {pokemons.map((pokemon, index) => {
                         return(
                             <li key={pokemon.name} style={{textTransform: 'capitalize'}}>
-                                {pokemon.name}
+                                <a href={`/pokemon/${index}`}>
+                                    {pokemon.name}
+                                </a>
                             </li>
                         )
                     })}
