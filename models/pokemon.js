@@ -8,4 +8,10 @@ const pokemon = [
     {name: "wartortle", img: "http://img.pokemondb.net/artwork/wartortle"}
 ];
 
+let i = 0
+while(i <= 6){
+    pokemon[i].img = `${pokemon[i].img}.jpg`
+    i++
+}
+
 module.exports = pokemon

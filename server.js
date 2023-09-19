@@ -4,12 +4,18 @@ const pokemon = require('./models/pokemon')
 const app = express()
 const port = 3000
 
-
 //Setting Default Engine and Extension
 const jsxEngine = require('jsx-view-engine')
 app.set('view engine', 'jsx');
 app.engine('jsx', jsxEngine());
 
+//Middleware
+app.use((req, res, next) => {
+    console.log('running for all routes')
+    next()
+})
+
+app.use(express.urlencoded({extended: false}))
 
 //Routes
 app.get('/', (req, res) => {
@@ -18,6 +24,16 @@ app.get('/', (req, res) => {
 
 app.get('/pokemon', (req, res) => {
     res.render('Index', {pokemons: pokemon})
+})
+
+app.get('/pokemon/new', (req, res) => {
+    res.render('New')
+})
+
+app.post('/pokemon', (req, res) => {
+    console.log(req.body)
+    pokemon.push(req.body)
+    res.redirect('/pokemon')
 })
 
 app.get('/pokemon/:id', (req, res) => {

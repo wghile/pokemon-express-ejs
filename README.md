@@ -1,6 +1,6 @@
 ## About
 
-Simple Pokemon application built using Express JS framework and view engine. To navigate to next page click on the Pokéball on the homepage.
+Simple Pokemon application built using Express JS framework and view engine. Created Index, New, Create, and Show routes. From homepage, to navigate to next page click on the Pokéball.
 
 ### Installation Instructions
 
