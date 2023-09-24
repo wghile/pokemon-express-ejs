@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon App</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        #web-page{
+            height: 100vh;
+            width: 100vw; 
+            background: linear-gradient(57.4deg, rgb(249, 206, 183) 4.6%, rgb(234, 174, 202) 26%, rgb(210, 182, 226) 49.1%, rgb(173, 209, 242) 86.5%); 
+            display: grid; 
+            grid-template-columns: 600px 1fr;
+        }
+        #left-side{
+            grid-column: 1/2; 
+            display: grid; 
+            grid-template-rows: 200px 1fr 100px;
+            align-items: center; 
+            font-family: Georgia;
+            margin: 20px 70px;
+        }
+        #text-container{
+            grid-row: 1/2;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center;
+        }
+            h1{
+                color: mediumvioletred; 
+                letter-spacing: 0.01in; 
+                margin-bottom: 0px;
+            }
+            #text-container > p{
+                line-height: 0.3in; 
+                padding-left: 20px;
+            }
+            span{
+                font-weight: bolder; 
+                color: red;
+                background: white;
+            }
+        #list{
+            grid-row: 2/3; 
+            overflow: scroll; 
+            height: 50vh;
+            padding-bottom: 20px;
+        }
+            ul{
+                list-style: inside; 
+            }
+            li{
+                text-transform: capitalize;
+                font-size: 18px;
+                line-height: 0.4in;
+                color: purple;
+            }
+            #list > ul > li > a{
+                letter-spacing: 0.01in;
+                color: purple;
+                transition: color 200ms ease-in-out;
+            }
+            #list > ul > li > a:hover{
+                color: white;
+            }
+
+
+        #add-to-list{
+            grid-row: 3/4; 
+            display: flex; 
+            justify-content: center;
+        }
+            #add-to-list > p{
+                color: steelblue; 
+                font-style: italic; 
+                font-size: 18px;
+            }
+            #add-to-list > p > a{
+                margin-left: 10px; 
+                font-size: 15px; 
+                padding: 10px; 
+                border-radius: 10px; 
+                border: 2px inset orange; 
+                cursor: pointer; 
+                font-family: Georgia; 
+                background-color: orange; 
+                color: white; 
+                text-decoration: none;
+            }
+
+        #right-side{
+            grid-column: 2/3; 
+            display: grid; 
+            align-items: center; 
+            margin-left: 3vw
+        }
+            img{
+                width: 700px; 
+                border-radius: 20px; 
+                border: 2px yellow inset;
+            }
+    </style>
+</head>
+<body>
+    <div id = 'web-page'>
+        <div id = 'left-side'>
+            <div id = 'text-container'>
+                <h1>
+                    Learn All The Pokémon
+                </h1>
+                <p>
+                    Just Kidding! With over 1000 Pokémon we won't be showing all of them here, that's <em>insaaaneee</em>. Instead, here's a list of some of the OG Pokémon that have been there since the start of it all with Ash, Misty, Brock and Team Rocket <span>R</span>!
+                </p>
+            </div>
+            <div id = 'list'>
+                <ul>
+                    <% pokemons.map((pokemon, index) => {%>
+                    <li>
+                        <a href = <%= `/pokemon/${index}` %> >
+                            <%= pokemon.name %>
+                        </a>
+                    </li>
+                    <% })%>
+                </ul>
+            </div>
+            <div id = 'add-to-list'>
+                <p>
+                    Not Happy With this List?
+                    <a href='/pokemon/new'>
+                        Click Here to Add More
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div id = 'right-side'>
+            <img src='https://wallpapers.com/images/hd/all-pokemon-pictures-05kt8nfnxx11r6ew.jpg' alt='Pokemon' />
+        </div>
+    </div>
+</body>
+</html>

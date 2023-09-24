@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon App</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        #web-page{
+            font-family: Georgia; 
+            background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224, 226, 228) 100.2%);
+            width: 100vw;
+            height: 100vh;
+        }
+        h1{
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+        p{
+            color: grey;
+            font-style: italic;
+        }
+        form{
+            margin-top: 30px;
+            line-height: 0.8in; 
+        }
+            #name-input{
+                line-break: auto;
+            }
+            #img-input{
+                width: 200px;
+            }
+            #submit-button{
+                font-family: Georgia; 
+                background-color: white; 
+                border: 2px lightblue solid; 
+                border-radius: 50px; 
+                padding: 10px 20px;
+                font-size: 15px; 
+                cursor: pointer;
+            }
+        img{
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 2px grey inset;
+        }
+    </style>
+</head>
+<body>
+    <div id = 'web-page'>
+        <h1>New Pokémon Submission Form</h1>
+        <p>Fill in the input fields to add to the list shown in the previous page</p>
+        <form action='/pokemon' method='POST'>
+            Pokémon Name: <input id = 'name-input' type='text' name='name'></input> 
+            <br />
+            Image of Pokémon: <input id = 'img-input' type='url' name='img' placeholder='.jpeg or .png format only'></input>
+            <br />
+            <input id = 'submit-button' type='submit'></input>
+        </form>
+        <img src = 'https://ssb.wiki.gallery/images/thumb/7/73/SSBU-Pok%C3%A9mon_Stadium_2.png/600px-SSBU-Pok%C3%A9mon_Stadium_2.png' alt = 'Pokemon Stadium' />
+    </div>
+</body>
+</html>

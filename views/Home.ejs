@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon App</title>
+    <style>
+        body{
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        #container{
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            display: grid;
+            grid-template-rows: 75px 1fr 50px;
+        }
+        nav{
+            grid-row: 1/2; 
+            height: 75px;
+            background-color: lightcoral; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+        }
+        h1{
+            color: beige; 
+            letter-spacing: 0.02in;
+            font-family: monospace; 
+            font-size: 40px;
+        }
+        #pokeball{
+            margin-left: 20px;
+            margin-top: 8px; 
+            cursor: pointer;
+            animation-name: shake;
+            animation-duration: 1s;
+            animation-delay: 200ms;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        @keyframes shake {
+            0%{transform: rotate(20deg)}
+            25%{transform: rotate(-20deg)}
+            50%{transform: rotate(10deg)}
+            75%{transform: rotate(-10deg)}
+            100%{transform: rotateX(0deg)}
+        }
+        main{
+            grid-row: 2/3; 
+            background-color: rgba(232, 227, 220, 0.751);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #main-image{
+            width: 73vw;
+            border-radius: 4px;
+        }
+        footer{
+            grid-row: 3/4;
+            width: 100vw;
+            height: 50px;
+            background-color: lightcoral; 
+            position: fixed;
+                bottom: 0px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: beige; 
+            letter-spacing: 0.02in;
+            font-family: monospace; 
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id = 'container'>
+        <nav>
+            <h1>
+                Welcome to the Pokémon App!
+            </h1>
+            <a href='/pokemon'>
+                <img id = 'pokeball' src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/640px-Pok%C3%A9_Ball_icon.svg.png' alt='Pokemon Ball' width='50px' />
+            </a>
+        </nav>
+        <main>
+            <img id = 'main-image' src = 'https://wallpapers.com/images/hd/all-pokemon-pictures-03imn29v8gsd3lup.jpg' alt = 'Ash and Pokemon'/>
+        </main>
+        <footer>
+            ⓒ Wentana Ghile 2023
+        </footer>
+    </div>
+</body>
+</html>

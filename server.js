@@ -5,9 +5,7 @@ const app = express()
 const port = 3000
 
 //Setting Default Engine and Extension
-const jsxEngine = require('jsx-view-engine')
-app.set('view engine', 'jsx');
-app.engine('jsx', jsxEngine());
+app.set('view engine', 'ejs');
 
 //Middleware
 app.use((req, res, next) => {
@@ -36,8 +34,8 @@ app.post('/pokemon', (req, res) => {
     res.redirect('/pokemon')
 })
 
-app.get('/pokemon/:id', (req, res) => {
-    res.render('Show', {pokemon: pokemon[req.params.id]})
+app.get('/pokemon/:index', (req, res) => {
+    res.render('Show', {pokemon: pokemon[req.params.index]})
 })
 
 

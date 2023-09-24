@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon App</title>
+    <style>
+        body{
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        #web-page{
+            height: 100vh;
+            width: 100vw; 
+            display: grid; 
+            grid-template-rows: 100px 1fr; 
+            font-family: Georgia; 
+            background-color: lavender;
+        }
+        nav{
+            grid-row: 1/2; 
+            display: flex; 
+            align-items: center;
+            padding-left: 40px;
+        }
+            a{
+                text-decoration: none; 
+                font-size: 20px; 
+                padding-left: 10px; 
+                color: darkturquoise; 
+                text-transform: uppercase;
+
+                display: flex;
+                align-items: center;
+            }
+            span{
+                font-size: 40px;
+                padding-right: 5px;
+            }
+            h1{
+                padding-left: 30vw; 
+                padding-top: 10vh; 
+                justify-content: center;
+                color: salmon; 
+                letter-spacing: 0.02in;
+            }
+        main{
+            grid-row: 2/3; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+        }
+        #container{
+            background: white; 
+            height: 65vh; 
+            width: 30vw; 
+            border-radius: 10px;
+            display: grid; 
+            grid-template-rows: 100px 1fr;
+        }
+            h2{
+                text-transform: capitalize; 
+                color: olive; 
+                letter-spacing: 0.02in; 
+                justify-self: center;
+                align-self: end;
+            }
+            img{
+                height: 70%; 
+                width: 60%; 
+                justify-self: center; 
+                align-self: center;
+            }
+    </style>
+</head>
+<body>
+    <div id = 'web-page'>
+        <nav>
+            <!-- <span>☜</span>  -->
+            <a href='/pokemon'>
+                <span>☜</span> Back
+            </a>
+            <h1>
+                Gotta Catch 'Em All!
+            </h1>
+        </nav>
+        <main>
+            <div id = 'container'>
+                <h2>
+                    <%= pokemon.name %>
+                </h2>
+                <img src = <%= pokemon.img %> alt = <%= pokemon.name %>>
+            </div>    
+        </main>
+    </div>
+    
+</body>
+</html>
