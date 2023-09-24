@@ -2,6 +2,8 @@
 
 Simple Pokémon application built using Express JS framework and ejs view engine. This is the same project as my pokemon-express-jsx repository. I changed the view engine to ejs because I was having trouble removing the default body styling. From resources and forums I found online, the ejs view engine template is an html file (much easier to add styling to). Using this, I was able to remove the default styling of the body and learned how to use a different view engine which was cool. Faced some difficulties passing down props due to incorrect syntax but thanks to the resources down below I resolved it!
 
+Link to project: https://pokemon-list.onrender.com/
+
 ## Future Work
 
 - Set requirements for new submission form (i.e. image format, how to handle blanks)
