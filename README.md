@@ -37,3 +37,8 @@ EJS Engine:
 Error Page:
 
 - http://expressjs.com/en/5x/api.html#res.status
+
+Render:
+
+- https://community.render.com/t/error-found-incompatible-module/13798/2
+- https://community.render.com/t/can-anyone-help-me-solve-this-issue-uri-parameter-to-openuri-must-be-a-string-got-undefined/8444
