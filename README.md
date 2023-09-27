@@ -1,12 +1,14 @@
 ## About
 
-Simple Pokémon application built using Node, Express JS framework and ejs view engine. This is the same project as my pokemon-express-jsx repository. I changed the view engine to ejs because I was having trouble removing the default body styling. From resources and forums I found online, the ejs view engine template is an html file (much easier to add styling to). Using this, I was able to remove the default styling of the body and learned how to use a different view engine which was cool. Faced some difficulties passing down props due to incorrect syntax but thanks to the resources down below I resolved it!
+Simple Pokémon application built using Mongoose, MongoDB, Node, Express, and ejs view engine. Users can click edit, delete, and add new Pokémon to the list that is connected to MongoDB.
+
+This is the same project as my pokemon-express-jsx repository.I changed the view engine to ejs because I was having trouble removing the default body styling initially. From resources and forums I found online, the ejs view engine template is an html file (much easier to add styling to). Using this, I was able to remove the default styling of the body and learned how to use a different view engine which was cool. Faced some difficulties passing down props due to incorrect syntax but thanks to the resources down below I resolved it! I also added an error page to handle blank submissions when adding new Pokémon.
 
 Link to project: https://pokemon-list.onrender.com/
 
 ## Future Work
 
-- Set requirements for new submission form (i.e. image format, how to handle blanks)
+- Set requirements for new submission form (i.e. image format)
 
 ### Installation Instructions
 
@@ -15,7 +17,7 @@ Link to project: https://pokemon-list.onrender.com/
 2. Install NPM packages on local machine
 
    - `npm i express`
-   - `npm i jsx-view-engine react react-dom dotenv`
+   - `npm i ejs react react-dom dotenv`
    - `npm i mongoose`
    - `npm i method-override`
 
@@ -31,3 +33,7 @@ EJS Engine:
 
 - https://www.tutorialspoint.com/how-to-use-ejs-in-javascript#:~:text=EJS%20is%20a%20templating%20language,manage%20and%20organize%20our%20code.
 - https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application
+
+Error Page:
+
+- http://expressjs.com/en/5x/api.html#res.status
