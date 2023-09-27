@@ -29,20 +29,30 @@
             margin-top: 30px;
             line-height: 0.8in; 
         }
+            span{
+                margin-right: 10px;
+            }
             #name-input{
                 line-break: auto;
+                padding: 5px;
+                font-family: monospace;
             }
             #img-input{
-                width: 200px;
+                width: 300px;
+                padding: 10px;
+                font-family: monospace;
             }
             #submit-button{
-                font-family: Georgia; 
-                background-color: white; 
-                border: 2px lightblue solid; 
+                font-family: monospace; 
+                background-color: lightgray; 
+                border: 2px grey outset; 
                 border-radius: 50px; 
-                padding: 10px 20px;
+                padding: 10px 30px;
                 font-size: 15px; 
                 cursor: pointer;
+            }
+            #submit-button:hover{
+                background-color: whitesmoke;
             }
         img{
             margin-top: 20px;
@@ -56,9 +66,9 @@
         <h1>New Pokémon Submission Form</h1>
         <p>Fill in the input fields to add to the list shown in the previous page</p>
         <form action='/pokemon' method='POST'>
-            Pokémon Name: <input id = 'name-input' type='text' name='name'></input> 
+            <span>Pokémon Name:</span> <input id = 'name-input' type='text' name='name'></input> 
             <br />
-            Image of Pokémon: <input id = 'img-input' type='url' name='img' placeholder='.jpeg or .png format only'></input>
+            <span>Image of Pokémon:</span> <input id = 'img-input' type='url' name='img' placeholder='.jpg or .png format only'></input>
             <br />
             <input id = 'submit-button' type='submit'></input>
         </form>
