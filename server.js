@@ -12,7 +12,7 @@ const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 
 //Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(`${process.env.MONGO_URI}`, {
     useNewURLParser: true,
     useUnifiedTopology: true,
 })
