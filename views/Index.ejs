@@ -55,18 +55,42 @@
             li{
                 text-transform: capitalize;
                 font-size: 18px;
-                line-height: 0.4in;
+                line-height: 0.8in;
                 color: purple;
+                
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
             }
-            #list > ul > li > a{
+            #list > ul > li > #name-link{
+                grid-column: '1/2';
                 letter-spacing: 0.01in;
                 color: purple;
                 transition: color 200ms ease-in-out;
             }
-            #list > ul > li > a:hover{
+            #list > ul > li > #name-link:hover{
                 color: white;
             }
-
+            #list > ul > li > #edit-link{
+                grid-column: '2/3';
+                text-decoration: none;
+                color: blue;
+                font-size: 17px;
+                text-align: right;
+            }
+            #list > ul > li > form{
+                grid-column: '3/4';
+                display: inline;
+            }
+                #list > ul > li > form > input{
+                    font-family: Georgia; 
+                    margin-left: 30px; 
+                    cursor: pointer; 
+                    border-radius: 10px;
+                    padding: 5px 10px; 
+                    color: red; 
+                    border: 2px black solid; 
+                    background-color: white;
+                }
 
         #add-to-list{
             grid-row: 3/4; 
@@ -117,11 +141,17 @@
             </div>
             <div id = 'list'>
                 <ul>
-                    <% pokemons.map((pokemon, index) => {%>
+                    <% pokemons.map((pokemon) => {%>
                     <li>
-                        <a href = <%= `/pokemon/${index}` %> >
+                        <a id='name-link' href = <%= `/pokemon/${pokemon._id}` %> >
                             <%= pokemon.name %>
                         </a>
+                        <a id='edit-link' href= <%= `/pokemon/${pokemon._id}/edit` %> >
+                            🖋️ Edit
+                        </a>
+                        <form action= <%= `/pokemon/${pokemon._id}?_method=DELETE` %> method='POST'>
+                            <input type="submit" value="❌ DELETE" />
+                        </form>
                     </li>
                     <% })%>
                 </ul>
